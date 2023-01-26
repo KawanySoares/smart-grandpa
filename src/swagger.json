@@ -1,0 +1,28 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Api SmartGrandpa",
+        "description": "Api para contribuir com cuidadores de idosos",
+        "termsOfService": "https://localhost:8080/terms",
+        "contact": {
+            "instagram": "asasdd"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+        "url": "http://localhost8080",
+        "description": "Rota da aplicação em serviço local"
+        }
+
+    ],
+    "paths": {
+        "/autenticacaoComum/registrar": {
+            "post": {
+                "summary": "Cadastro de Usuario Comum",
+                "description": "Essa rota cadastra um usuario comum no banco de dados usando autenticação jwt: cadastro com nome, sobrenome, email, senha, endereço, telefone, celular, data_nasc e idade",
+                "tags": ["Users"]
+            }
+        }
+    }
+}
