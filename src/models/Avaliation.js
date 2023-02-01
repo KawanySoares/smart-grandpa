@@ -2,12 +2,6 @@ const mongoose = require('mongoose')
 
 
 const AvaliationSchema = mongoose.Schema({
-    _id: {
-        type: String,
-        default: function generateUUID() {
-            return uuidv4()
-        }
-    },
 
     usuario_avaliacao: [{type: mongoose.Schema.Types.ObjectId, ref: 'UserCommon' } ||  { type: mongoose.Schema.Types.ObjectId, ref: 'UserCareviger'}],
 

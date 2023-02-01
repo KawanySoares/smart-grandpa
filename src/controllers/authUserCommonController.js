@@ -95,4 +95,5 @@ router.post('/login', async (req, res) => {
     })
 })
 
+
 module.exports = app => app.use('/autenticacaoComum', router)

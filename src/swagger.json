@@ -22,7 +22,109 @@
                 "summary": "Cadastro de Usuario Comum",
                 "description": "Essa rota cadastra um usuario comum no banco de dados usando autenticação jwt: cadastro com nome, sobrenome, email, senha, endereço, telefone, celular, data_nasc e idade",
                 "tags": ["Users"]
+            },
+            "requestBody": {
+                "description": "Dados para cadastro de usuario comum",
+                "content": {
+                    "application/json": {
+                        "schema": {
+
+                        }
+                    }
+                }
             }
+        }
+    },
+
+    "components": {
+        "schemas": {
+            "UserCommon": {
+                "type": "object",
+                "properties": {
+                    "nome": {
+                        "type": "String",
+                        "description": "Nome do usuario"
+                    },
+                    "sobrenome": {
+                        "type": "String",
+                        "description": "Sobrenome do usuario"
+                    },
+                    "email": {
+                        "type": "String",
+                        "description": "Email do usuario"
+                    },
+                    "senha": {
+                        "type": "String",
+                        "description": "Senha do usuario"
+                    },
+                    "endereço": {
+                        "type": "String",
+                        "description": "Endereço do usuario"
+                    },
+                    "telefone": {
+                        "type": "String",
+                        "description": "Telefone do usuario"
+                    },
+                    "celular": {
+                        "type": "String",
+                        "description": "Celular do usuario"
+                    },
+                    "data_nasc": {
+                        "type": "Date",
+                        "description": "Data de nascimento do usuario"
+                    },
+                    "idade": {
+                        "type": "Number",
+                        "description": "Idade do usuario"
+                    }
+                }
+            },
+            "UserCareviger": {
+                "type": "object",
+                "properties": {
+                    "cpf": {
+                        "type": "String",
+                        "description": "CPF do usuario"
+                    },
+                    "nome": {
+                        "type": "String",
+                        "description": "Nome do usuario"
+                    },
+                    "sobrenome": {
+                        "type": "String",
+                        "description": "Sobrenome do usuario"
+                    },
+                    "email": {
+                        "type": "String",
+                        "description": "Email do usuario"
+                    },
+                    "senha": {
+                        "type": "String",
+                        "description": "Senha do usuario"
+                    },
+                    "endereço": {
+                        "type": "String",
+                        "description": "Endereço do usuario"
+                    },
+                    "telefone": {
+                        "type": "String",
+                        "description": "Telefone do usuario"
+                    },
+                    "celular": {
+                        "type": "String",
+                        "description": "Celular do usuario"
+                    },
+                    "data_nasc": {
+                        "type": "Date",
+                        "description": "Data de nascimento do usuario"
+                    },
+                    "idade": {
+                        "type": "Number",
+                        "description": "Idade do usuario"
+                    }
+                }
+            }
+            
         }
     }
 }

@@ -15,6 +15,7 @@ app.use("/api-docs", swagger.serve, swagger.setup(swaggerFile))
 require('./controllers/authUserCommonController')(app)
 require('./controllers/authUserCarevigerController')(app)
 require('./controllers/uploadFilesController')(app)
+require('./controllers/postageController')(app)
 
 
 module.exports = { app }

@@ -4,9 +4,10 @@ const mongoose = require('mongoose')
 
 const FileSchema = new mongoose.Schema({
     nome: String,
+    usuario: { type: mongoose.Schema.Types.ObjectId, ref: 'UserCommon'} || { type: mongoose.Schema.Types.ObjectId, ref: 'UserCareviger'},
     size: Number,
-    key: Number,
-    url: [ { type: mongoose.Schema.Types.ObjectId, ref: 'UserCommon'} ||  { type: mongoose.Schema.Types.ObjectId, ref: 'UserCareviger'}],
+    key: String,
+    url: String,
     data_criada: {
         type: Date,
         default: Date.now

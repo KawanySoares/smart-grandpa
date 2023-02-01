@@ -4,12 +4,6 @@ const bcryptjs = require('bcryptjs')
 
 
 const UserCommonSchema = new mongoose.Schema({
-    _id: {
-        type: String,
-        default: function generateUUID() {
-            return uuidv4()
-        }
-    },
 
     nome: String,
     sobrenome: String,

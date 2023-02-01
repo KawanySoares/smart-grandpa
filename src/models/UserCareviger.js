@@ -4,12 +4,6 @@ const bcryptjs = require('bcryptjs')
 
 
 const UserCarevigerSchema = new mongoose.Schema({
-    _id: {
-        type: String,
-        default: function generateUUID() {
-            return uuidv4()
-        }
-    },
 
     cpf: {
         type: String,
