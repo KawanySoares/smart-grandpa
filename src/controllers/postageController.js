@@ -9,9 +9,20 @@ router.use(auth)
 
 router.post('/criar', async (req, res) => {
     try {
-        const post = await Files.create({
+        const post = await Postage.create({
             ...req.body, usuario: req.userId
         })
+        
+        console.log(req.userId)
+        return res.send(post)
+    } catch (err) {
+        return res.status(401).send("Error" + err)
+    }
+})
+
+router.post('/delete/:id', async (req, res) => {
+    try {
+        
         
         console.log(req.userId)
         return res.send(post)
