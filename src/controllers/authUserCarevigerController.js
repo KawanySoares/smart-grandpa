@@ -75,30 +75,5 @@ router.post('/registrar', async (req, res) => {
     
 })
 
-router.post('/login', async (req, res) => {
-    const { email , senha } = req.body
-
-    const user = await UserCareviger.findOne({ email }).select('+senha')
-
-    if(!user) {
-        return res.status(400).send({
-            message: 'error: User not found'
-        })
-    }
-
-    if(!await bcryptjs.compare(senha, user.senha)) {
-        return res.status(400).send({
-            mensagem: 'error: Invalid password'
-        })
-    }
-
-    user.senha = undefined
-
-
-    res.send({
-        user,
-        token: generateToken({id: user.id})
-    })
-})
 
 module.exports = app => app.use('/autenticacaoCuidador', router)

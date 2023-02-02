@@ -23,6 +23,7 @@ const UserCommonSchema = new mongoose.Schema({
     celular: String,
     data_nasc: Date,
     idade: Number,
+    posts: [{type: mongoose.Schema.Types.ObjectId, ref: 'Postage'}],
     data_criada: {
         type: Date,
         default: Date.now

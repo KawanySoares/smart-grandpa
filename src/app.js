@@ -16,6 +16,8 @@ require('./controllers/authUserCommonController')(app)
 require('./controllers/authUserCarevigerController')(app)
 require('./controllers/uploadFilesController')(app)
 require('./controllers/postageController')(app)
+require('./controllers/loginUsersController')(app)
+require('./controllers/forgotPasswordController')
 
 
 module.exports = { app }
