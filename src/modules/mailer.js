@@ -42,4 +42,4 @@ transport.use('compile', hbs(handlebarOptions));
 
 
 
-module.exports = { transport }
+module.exports = transport

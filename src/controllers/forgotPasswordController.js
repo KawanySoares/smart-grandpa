@@ -28,17 +28,17 @@ router.post('/', async (req, res) => {
 
         await UserCommon.findByIdAndUpdate(user.id, {
             '$set': {
-                'passwordResetToken': token,
-                'passwordResetNow': now
+                passwordResetToken: token,
+                passwordResetNow: now
             }
-        }) || await UserCareviger.findByIdAndUpdate(user.id, {
+        },  { new: true, useFindAndModify: false }) || await UserCareviger.findByIdAndUpdate(user.id, {
             '$set': {
-                'passwordResetToken': token,
-                'passwordResetNow': now
+                passwordResetToken: token,
+                passwordResetNow: now
             }
-        })
+        },  { new: true, useFindAndModify: false })
 
-        await mailer.sendMail({
+         mailer.sendMail({
             to: email,
             from: "0000872054@senaimgaluno.com.br",
             subject: 'Test',
@@ -59,4 +59,4 @@ router.post('/', async (req, res) => {
 })
 
 
-module.exports = app => app.use('/forgot', router)
+module.exports = app => app.use('/recuperar', router)

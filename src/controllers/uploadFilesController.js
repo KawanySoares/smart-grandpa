@@ -1,26 +1,28 @@
 const express = require('express')
-const Postage = require('../models/Postage')
+const Files = require('../models/Files')
 const UserCommon = require('../models/UserCommon')
+const UserCareviger = require('../models/UserCareviger')
 const multer = require('multer')
 const auth = require('../middlewares/authentication')
 const multerConfig = require('../config/multer')
-const UserCareviger = require('../models/UserCareviger')
 
 const router = express.Router()
 
 router.use(auth)
 
-router.post('/posts', async (req, res) => {
+router.post('/', multer(multerConfig).single('file'), async (req, res) => {
 
     try {
-
-        const post = await Postage.create({
-            ...req.file, usuario: req.userId
+        const post = await Files.create({
+            ...req.file, url: "", usuario: req.userId
         })
-
-        await (await UserCommon.create({posts: post})).$where('_id').equals(req.userId) || 
-        await (await UserCareviger.create({posts: post})).$where('_id').equals(req.userId)
         
+        const user = await UserCommon.findById(req.userId) || await UserCareviger.findById(req.userId)
+
+        user.posts.push(post)
+        await user.save()
+
+        console.log(req.userId)
         return res.send(post)
     } catch (err) {
         return res.status(401).send("Error" + err)
@@ -28,6 +30,8 @@ router.post('/posts', async (req, res) => {
 
 
 })
+
+
 
 
 module.exports = app => app.use('/arquivos', router)
