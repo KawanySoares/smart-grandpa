@@ -9,6 +9,14 @@ const router = express.Router()
 
 router.use(auth)
 
+
+router.get('/', async (req, res) => {
+    const users = await UserCommon.find({}) && await UserCareviger.find({})
+
+    return res.send(users)
+})
+
+
 router.post('/criar', async (req, res) => {
     const { conteudo } = req.body
     
@@ -26,12 +34,29 @@ router.post('/criar', async (req, res) => {
     }
 })
 
-router.get('/', async (req, res) => {
-    const users = await UserCommon.find({}) && await UserCareviger.find({})
 
-    return res.send(users)
+router.delete('/excluir/:id', async (req, res) => {
+    //terminar
+    const { id } = req.params
+
+    try {
+        await Postage.deleteOne({ id })
+    
+        return res.status(200).send({
+            message: "Post excluido com sucesso"
+        })
+
+    }catch(err) {
+        return res.status(400).send({
+            error: "Falha ao excluir postagem !!"
+        })
+    }
+    
 })
 
+router.put('/alterar/:id', async (req, res) => {
+    //continuar
+})
 
 
 module.exports = app => app.use('/post', router)

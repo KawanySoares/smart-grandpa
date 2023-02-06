@@ -6,7 +6,7 @@ const { config } = require('dotenv')
 
 config()
 
-var transport = nodemailer.createTransport(smtpTransport({
+var transport = nodemailer.createTransport(({
   host: process.env.HOST,
   port: process.env.PORT_TRANSPORT,
   auth: {

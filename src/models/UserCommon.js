@@ -23,6 +23,14 @@ const UserCommonSchema = new mongoose.Schema({
     celular: String,
     data_nasc: Date,
     idade: Number,
+    passwordResetToken: {
+        type: String,
+        select: false
+    },
+    passwordResetExpires: {
+        type: String,
+        select: false
+    },
     posts: [{type: mongoose.Schema.Types.ObjectId, ref: 'Postage'}],
     data_criada: {
         type: Date,
