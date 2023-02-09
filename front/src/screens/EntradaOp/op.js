@@ -7,7 +7,7 @@ import { FiraSans_500Medium, useFonts } from '@expo-google-fonts/fira-sans';
 
 
 
-export function OpScreen ({ navigation }) {
+export  function OpScreen ({ navigation }) {
 
   const [fonteLoaded] = useFonts({
     FiraSans_500Medium,

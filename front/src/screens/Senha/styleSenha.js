@@ -9,41 +9,69 @@ const styleSenha = StyleSheet.create({
     title:{
       fontSize: 25,
       color: '#3F3847',
-      marginTop: 85,
+      marginTop: 25,
       textAlign:'center',
       fontWeight: '600',
       fontFamily:'FiraSans_500Medium',
     },
+
+    cadeado:{
+      alignItems: 'center',
+      paddingTop: 60
+
+    },
+
+    containerSenha:{
+
+       flex:1,
+      marginTop:110,
+      backgroundColor: '#f7fff7',
+      borderTopEndRadius: 20,
+      borderTopStartRadius:20,
+      marginHorizontal: 5,
+      
+
+    },
+    design:{
+      marginTop:25,
+
+    },
   
      input:{
        height: 50,
-       backgroundColor: '#FFFF',
+       backgroundColor: '#e7ecef',
        paddingLeft: 25,
        marginHorizontal: 20,
-       borderRadius: 20,
+       borderRadius: 15,
        fontSize: 18,
        borderColor: '#E4E7EB',
-       marginTop: 55,
+       marginTop: 40,
        fontFamily:'FiraSans_500Medium'
      },
-  
-     inputIcon:{
-      marginTop:-25,
+
+     containerText:{
+      marginTop:20,
+
+     },
+
+     text:{
+      alignItems:'center',
+      textAlign:'center',
+      fontSize: 16,
+      marginHorizontal:25,
+      fontFamily:'FiraSans_500Medium'
+
      },
   
-     icon:{
-      position: 'absolute',
-      right: 35,
-      top: 65,
-     },
+    
   
-     btnEnter:{
-      height:60,
+     btnSenha:{
+      height:55,
       borderRadius:15,
       backgroundColor:'#9C80BE',
       alignItems:'center',
       justifyContent:'center',
-      marginTop:40,
+      marginTop:80,
       marginBottom:10,
       marginLeft:60,
       marginRight:60,

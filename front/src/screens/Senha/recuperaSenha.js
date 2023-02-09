@@ -1,9 +1,9 @@
 import React from 'react';
 import styleSenha from './styleSenha';
-import { View, Text, TextInput, TouchableOpacity,Image} from 'react-native'
+import { View, Text, TextInput, TouchableOpacity, Image} from 'react-native'
 import { Ionicons} from '@expo/vector-icons';
 import { FiraSans_500Medium, useFonts } from '@expo-google-fonts/fira-sans';
-
+import cadeado from 'C:/Users/usuario/Desktop/smart-grandpa/front/assets/cadeado.png'
 
 
 export function SenhaSreen({ navigation }){
@@ -24,39 +24,34 @@ export function SenhaSreen({ navigation }){
   return(
       <View style={styleSenha.container}>
 
-        <Text style={styleSenha.title}>Página de recuperação</Text>
       
-        <TextInput
+        <View style={styleSenha.cadeado}>
+          <Image style={{width:70, height: 70}} source={cadeado}></Image> 
+        </View> 
+
+      <Text style={styleSenha.title}>Redefinir sua senha</Text>
+
+      <View style={styleSenha.containerSenha}>
+        <View style={styleSenha.design}>
+          <TextInput
           style={styleSenha.input}
           onChangeText={onChangeEmail}
           value={email}
           placeholder="E-mail"
-        />
+          />
+         <View style={styleSenha.containerText}>
+          <Text style={styleSenha.text}> Digite o seu e-mail registrado
+           para a recuperar sua senha</Text>  
+         </View>
+         
+         <TouchableOpacity style={styleSenha.btnSenha} onPress={() => navigation.navigate('CodeScreen')}>
+         <Text style={{color:"#DAD0FB", fontSize:16, fontFamily:'FiraSans_500Medium',}}>Enviar código</Text>
+         </TouchableOpacity>
 
 
-        <View style={styleSenha.inputIcon}>
-        <TextInput
-          style={styleSenha.input}
-          onChangeText={ (texto) => setPassword(texto)}
-          value={password}
-          placeholder="Senha"
-          secureTextEntry={hidePass}
-        /> 
-
-        <TouchableOpacity style={styleSenha.icon}  onPress={() => setHidePass(!hidePass) } >
-          {hidePass ?
-          <Ionicons name="eye-off" color="#9C80BE" size={25}/>
-          :
-          <Ionicons name="eye" color="#9C80BE" size={25}/>
-          }
-          </TouchableOpacity>
         </View>
-
-        <TouchableOpacity style={styleSenha.btnEnter}>
-          <Text style={{color:"#DAD0FB", fontSize:16, fontFamily:'FiraSans_500Medium',}}>Enter</Text>
-          </TouchableOpacity>
-
-        
+      </View>
+       
           
       
       </View>
