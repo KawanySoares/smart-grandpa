@@ -14,7 +14,7 @@ const generateToken = (params = {}) => {
     })
 }
 
-router.post('/registrar', async (req, res) => {
+router.post('/', async (req, res) => {
     const { nome, sobrenome, email, senha, endereco, telefone, celular, data_nasc, idade } = req.body
     
     const emailRegex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
@@ -71,4 +71,4 @@ router.post('/registrar', async (req, res) => {
 
 
 
-module.exports = app => app.use('/autenticacaoComum', router)
+module.exports = app => app.use('/cadastro_comum', router)

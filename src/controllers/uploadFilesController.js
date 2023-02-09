@@ -13,23 +13,35 @@ router.use(auth)
 router.post('/', multer(multerConfig).single('file'), async (req, res) => {
 
     try {
-        const post = await Files.create({
-            ...req.file, url: "", usuario: req.userId
-        })
-        
+        const { originalname: name, size, key, location: url = "" } = req.file;
+    
+        const file = await Files.create({
+          name,
+          size,
+          key,
+          url
+        });
+
         const user = await UserCommon.findById(req.userId) || await UserCareviger.findById(req.userId)
 
-        user.posts.push(post)
+        user.files.push(file)
         await user.save()
 
-        console.log(req.userId)
-        return res.send(post)
-    } catch (err) {
-        return res.status(401).send("Error" + err)
+        return res.send(file)
+    
+
+    } catch(err) {
+        return res.status(400).send({
+            message: "Erro ao enviar arquivo"
+        })
     }
-
-
 })
+
+router.get("/", async (req, res) => {
+    const files = await Files.find();
+  
+    return res.json(files);
+  });
 
 
 
