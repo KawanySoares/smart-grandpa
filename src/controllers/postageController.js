@@ -11,32 +11,16 @@ router.use(auth)
 
 
 router.get('/', async (req, res) => {
-    const userCommon = await UserCommon.find().populate('posts').populate('files')
-    const userCareviger = await UserCareviger.find().populate('posts').populate('files')
+    const posts = await Postage.find()
 
-    return res.send({
-        UsuariosComuns: userCommon,
-        UsuariosCuidadores: userCareviger
-    })
+    return res.send({posts})
 })
 
 router.get('/:id', async (req, res) => {
     const { id } = req.params
+    const post = await Postage.findById(id).populate('usuario')
 
-    const userCommon = await UserCommon.findById(id).populate('posts').populate('files')
-    const userCareviger = await UserCareviger.findById(id).populate('posts').populate('files')
-
-    if(userCommon == null) {
-        return res.send({
-            UsuariosCuidadores: userCareviger
-        })    
-    }
-
-    if(userCareviger == null) {
-        return res.send({
-            UsuariosComuns: userCommon,
-        })
-    }
+    return res.send(post)
 
 })
 
@@ -90,8 +74,20 @@ router.put('/alterar/:id', async (req, res) => {
     const { conteudo } = req.body
     const { id } = req.params
 
-    //continuar
+    try {
+        const post = await Postage.findById(id)
 
+        post.conteudo = conteudo
+
+        post.save()
+    
+        res.status(200).send({
+            message: "Postagem alterada com sucesso !"
+        })
+
+    } catch (err) {
+        console.log(err);
+    }
 })
 
 

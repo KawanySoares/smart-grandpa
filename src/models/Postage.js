@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const PostageSchema = new mongoose.Schema({
 
-    usuario: { type: mongoose.Schema.Types.ObjectId, ref: 'UserCommon'} || { type: mongoose.Schema.Types.ObjectId, ref: 'UserCareviger'},
+    usuario: { type: mongoose.Schema.Types.ObjectId, ref: 'UserCommon', ref: 'UserCareviger'},
 
     conteudo: {
         type: String,

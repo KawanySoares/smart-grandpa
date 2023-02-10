@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 
 const FileSchema = new mongoose.Schema({
     nome: String,
-    usuario: { type: mongoose.Schema.Types.ObjectId, ref: 'UserCommon'} || { type: mongoose.Schema.Types.ObjectId, ref: 'UserCareviger'},
+    usuario: { type: mongoose.Schema.Types.ObjectId, ref: 'UserCommon', ref: 'UserCareviger'},
     size: Number,
     key: String,
     url: String,
