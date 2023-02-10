@@ -19,8 +19,8 @@ export default function App() {
     <Stack.Navigator>
       
     <Stack.Screen 
-      name="LoginScreen" 
-      component={LoginScreen}
+      name="CodeScreen" 
+      component={CodeScreen}
       options={{
         headerShown: false,
       }}  
@@ -47,8 +47,8 @@ export default function App() {
       }}  
     />
     <Stack.Screen 
-      name="CodeScreen" 
-      component={CodeScreen}
+      name="LoginScreen" 
+      component={LoginScreen}
       options={{
         headerShown: false,
       }}  
