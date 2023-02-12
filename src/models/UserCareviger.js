@@ -31,6 +31,8 @@ const UserCarevigerSchema = new mongoose.Schema({
     data_nasc: Date,
     idade: Number,
     posts: [{type: mongoose.Schema.Types.ObjectId, ref: 'Postage'}],
+    fotos_perfil: [{type: mongoose.Schema.Types.ObjectId, ref: 'Files'}],
+    curriculo: [{type: mongoose.Schema.Types.ObjectId, ref: 'Files'}],
     passwordResetToken: {
         type: String,
         select: false

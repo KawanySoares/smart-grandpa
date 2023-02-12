@@ -32,6 +32,8 @@ const UserCommonSchema = new mongoose.Schema({
         select: false
     },
     posts: [{type: mongoose.Schema.Types.ObjectId, ref: 'Postage'}],
+    fotos_perfil: [{type: mongoose.Schema.Types.ObjectId, ref: 'Files'}],
+    curriculo: [{type: mongoose.Schema.Types.ObjectId, ref: 'Files'}],
     data_criada: {
         type: Date,
         default: Date.now
