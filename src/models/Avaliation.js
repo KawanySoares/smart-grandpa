@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 
 const AvaliationSchema = mongoose.Schema({
 
-    usuario_avaliacao: [{type: mongoose.Schema.Types.ObjectId, ref: 'UserCommon' } ||  { type: mongoose.Schema.Types.ObjectId, ref: 'UserCareviger'}],
+    usuario_avaliacao: {type: mongoose.Schema.Types.ObjectId, ref: 'UserCommon', ref: 'UserCareviger'},
 
     like: {
         type: Number,
