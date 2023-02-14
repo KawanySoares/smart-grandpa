@@ -300,6 +300,53 @@
                         "description": "Salva arquivos pdf"
                     }
                 }
+            },
+            "Postage": {
+                "usuario": {
+                    "type": "ObjectId",
+                    "description": "Usuario que fez a postagem"
+                },
+                "conteudo": {
+                    "type": "String",
+                    "description": "Conteudo que o usuario postou"
+                },
+
+                "data_criada": {
+                    "type": "Date",
+                    "description": "Data em que o conteudo foi criado"
+                },
+
+                "horario_criado": {
+                    "type": "Date",
+                    "description": "Hora em que o conteudo foi criado"
+                }
+            },
+
+            "Files": {
+                "nome": {
+                    "type": "String",
+                    "description": "Nome do arquivo"
+                },
+                "usuario": { 
+                    "type": "ObjectId",
+                    "description": "Usuario que enviou o arquivo" 
+                },
+                "size": {
+                    "type": "Number",
+                    "description": "Tamanho do arquivo"
+                },
+                "key": {
+                    "type": "Number",
+                    "description": "chave para anexar ao nome do arquivo"
+                },
+                "url": {
+                    "type": "String",
+                    "description": "Url do arquivo"
+                },
+                "data_criada": {
+                    "type": "Date",
+                    "description": "Data em que o aruivo foi enviado"
+                }
             }
             
         }
