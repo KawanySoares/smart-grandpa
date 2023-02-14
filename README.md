@@ -10,8 +10,8 @@ Api para o app Smart Grandpa
 - [X] Recuperar senha
 - [X] Envio de arquivos para foto de perfil e curriculo
 - [X] Fazer postagens
-- [] Avaliar perfil
-- [] Chat
+- [O] Avaliar perfil
+- [O] Chat
 
 ## Project setup
 ```
