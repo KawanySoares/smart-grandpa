@@ -1,6 +1,7 @@
 const express = require('express')
 const UserCommon = require('../models/UserCommon')
 const UserCareviger = require('../models/UserCareviger')
+const Files = require('../models/Files')
 const multer = require('multer')
 const multerConfig = require('../config/multer')
 const auth = require('../middlewares/authentication')
@@ -43,7 +44,9 @@ router.post('/foto', multer(multerConfig).single('file'), async (req, res) => {
     }
 })
 
-
+router.put('/foto', multer(multerConfig).single('file'), async (req, res) => {
+    //continuar
+})
 
 router.get('/curriculo/:id', async (req, res) => {
     const { id } = req.params

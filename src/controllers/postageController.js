@@ -9,11 +9,18 @@ const router = express.Router()
 
 router.use(auth)
 
+router.get('/meus_posts', async (req, res) => {
+    const user = await UserCommon.findById(req.userId).populate('posts') || await UserCareviger.findById(req.userId).populate('posts')
+
+    res.status(200).send(user.posts)
+
+
+})
 
 router.get('/', async (req, res) => {
     const posts = await Postage.find()
 
-    return res.send({posts})
+    return res.send(posts)
 })
 
 router.get('/:id', async (req, res) => {
@@ -23,7 +30,6 @@ router.get('/:id', async (req, res) => {
     return res.send(post)
 
 })
-
 
 router.post('/criar', async (req, res) => {
     const { conteudo } = req.body

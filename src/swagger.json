@@ -33,6 +33,159 @@
                     }
                 }
             }
+        },
+        "/autenticacaoCuidador/registrar": {
+            "post": {
+                "summary": "Cadastro de Usuario Cuidador",
+                "description": "Essa rota cadastra um usuario cuidador no banco de dados usando autenticação jwt: cadastro com cpf, nome, sobrenome, email, senha, endereço, telefone, celular, data_nasc e idade",
+                "tags": ["Users"]
+            },
+            "requestBody": {
+                "description": "Dados para cadastro de usuario cuidador",
+                "content": {
+                    "application/json": {
+                        "schema": {
+
+                        }
+                    }
+                }
+            }
+        },
+        "/login": {
+            "post": {
+                "summary": "Login de Usuarios",
+                "description": "Essa rota loga um usuario e retorna suas informações e o token",
+                "tags": ["Users"]
+            },
+            "requestBody": {
+                "description": "Dados para login",
+                "content": {
+                    "application/json": {
+                        "schema": {
+
+                        }
+                    }
+                }
+            }
+        },
+        "/login/": {
+            "get": {
+                "summary": "Usuarios cadastrados no sistema",
+                "description": "Mostra os usuarios cadastrados no sistema",
+                "tags": ["Users"]
+            },
+            "requestBody": {
+                "description": "Dados para cadastro de usuario comum",
+                "content": {
+                    "application/json": {
+                        "schema": {
+
+                        }
+                    }
+                }
+            }
+        },
+        "/recuperar/": {
+            "post": {
+                "summary": "Recuperação de senha",
+                "description": "Essa rota gera um token de recuperação de senha que é enviado no email do usuario",
+                "tags": ["Users"]
+            },
+            "requestBody": {
+                "description": "Dados para recuperação de senha de usuario",
+                "content": {
+                    "application/json": {
+                        "schema": {
+
+                        }
+                    }
+                }
+            }
+        },
+        "/recuperar/mudar_senha": {
+            "post": {
+                "summary": "Alterar senha d Usuario",
+                "description": "Essa rota recebe um email, a nova senha e o token enviado e altera no banco de dados",
+                "tags": ["Users"]
+            },
+            "requestBody": {
+                "description": "Dados para alteração de senha do usuario",
+                "content": {
+                    "application/json": {
+                        "schema": {
+
+                        }
+                    }
+                }
+            }
+        },
+        "/perfil/foto": {
+            "post": {
+                "summary": "Foto de Perfil",
+                "description": "Adiciona foto de perfil do usuario",
+                "tags": ["Users"]
+            },
+            "requestBody": {
+                "description": "Dados para foto de perfil do usuario",
+                "content": {
+                    "application/json": {
+                        "schema": {
+
+                        }
+                    }
+                }
+            }
+        },
+        "/pefil/:id": {
+            "get": {
+                "summary": "Bucar foto de perfil do usuario",
+                "description": "Essa rota busca a foto de perfil do usuario",
+                "tags": ["Users"]
+            },
+            "requestBody": {
+                "description": "",
+                "content": {
+                    "application/json": {
+                        "schema": {
+
+                        }
+                    }
+                }
+            }
+        },
+        "/perfil/curriculo": {
+            "post": {
+                "summary": "Curriculo",
+                "description": "Adiciona curriculo ao perfil do usuario",
+                "tags": ["Users"]
+            },
+            "requestBody": {
+                "description": "Dados para curriculo do usuario",
+                "content": {
+                    "application/json": {
+                        "schema": {
+
+                        }
+                    }
+                }
+            }
+        },
+        "/perfil/curriculo/:id": {
+            "post": {
+                "summary": "Curriculo",
+                "description": "Busca curriculo do usuario",
+                "tags": ["Users"]
+            },
+            "requestBody": {
+                "description": "",
+                "content": {
+                    "application/json": {
+                        "schema": {
+
+                        }
+                    }
+                }
+            }
         }
     },
 
@@ -76,6 +229,18 @@
                     "idade": {
                         "type": "Number",
                         "description": "Idade do usuario"
+                    },
+                    "posts": {
+                        "type": "ObjectId",
+                        "description": "Salva as postagens do usuario"
+                    },
+                    "fotos_perfil": {
+                        "type": "ObjectId",
+                        "description": "Salva imagens para foto de perfil"
+                    },
+                    "curriculo": {
+                        "type": "ObjectId",
+                        "description": "Salva arquivos pdf"
                     }
                 }
             },
@@ -121,6 +286,18 @@
                     "idade": {
                         "type": "Number",
                         "description": "Idade do usuario"
+                    },
+                    "posts": {
+                        "type": "ObjectId",
+                        "description": "Salva as postagens do usuario"
+                    },
+                    "fotos_perfil": {
+                        "type": "ObjectId",
+                        "description": "Salva imagens para foto de perfil"
+                    },
+                    "curriculo": {
+                        "type": "ObjectId",
+                        "description": "Salva arquivos pdf"
                     }
                 }
             }
