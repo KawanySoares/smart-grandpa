@@ -3,7 +3,7 @@ import styleSenha from './styleSenha';
 import { View, Text, TextInput, TouchableOpacity, Image} from 'react-native'
 import { Ionicons} from '@expo/vector-icons';
 import { FiraSans_500Medium, useFonts } from '@expo-google-fonts/fira-sans';
-import cadeado from 'C:/Users/usuario/Desktop/smart-grandpa/front/assets/cadeado.png'
+import cadeado from 'C:/Users/kawah/Documents/GitHub/smart-grandpa/front/assets/cadeado.png'
 
 
 export function SenhaSreen({ navigation }){

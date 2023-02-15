@@ -3,8 +3,8 @@ import styleRegister from './styleRegister';
 import { View, Text, TextInput, TouchableOpacity,Image} from 'react-native'
 import { Ionicons} from '@expo/vector-icons';
 import { FiraSans_500Medium, useFonts } from '@expo-google-fonts/fira-sans';
-import loginFacebook from 'C:/Users/usuario/Desktop/smart-grandpa/front/assets/facebook.png';
-import loginGoogle from 'C:/Users/usuario/Desktop/smart-grandpa/front/assets/google.png';
+import loginFacebook from 'C:/Users/kawah/Documents/GitHub/smart-grandpa/front/assets/facebook.png';
+import loginGoogle from 'C:/Users/kawah/Documents/GitHub/smart-grandpa/front/assets/google.png';
 import { NavigationContainer } from '@react-navigation/native';
 // import { styleRegister } from './styleRegister';
 

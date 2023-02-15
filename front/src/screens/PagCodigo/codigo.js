@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import styleCode from './styleCode';
-import { View, Text , TextInput} from 'react-native'
+import { View, Text , TextInput, StyleSheet} from 'react-native'
 import { FiraSans_500Medium, useFonts } from '@expo-google-fonts/fira-sans';
 
 export function CodeScreen({ navigation }){
@@ -15,7 +15,7 @@ export function CodeScreen({ navigation }){
   const secondInput = useRef();
   const thirdInput = useRef();
   const fourthInput = useRef();
-  const [otp, setOtp] = useState({1: '', 2: '', 3:'', 4:''})
+  const [otp, setOtp] = useState({1: '', 2: '', 3: '', 4: ''})
 
   const [fonteLoaded] = useFonts({
 
@@ -32,52 +32,56 @@ export function CodeScreen({ navigation }){
 
 return(
   <View style={styleCode.container}>
-     <Text style={styleCode.login}>Login</Text>
+     <Text style={styleCode.text}>Login</Text>
 
 
      <View style={styleCode.opContainer}>
-      <View style={styleCode.otpText}>
-       <TextInput style={styleCode.otpText}>
-        keyboardType='numeric'
-        onChangeText={onChangePhone}
+      <View style={styleCode.otpBox}>
+       <TextInput
+        style={styleCode.otpText}
+        keyboardType='default'
         maxLength={1}
         ref={firstInput}
         onChangeText={text => {
-          text && firstInput.current.focus();
+          setOtp({...otp, 1: text})
+          text && secondInput.current.focus();
          }}
         />
      </View>
 
-     <View style={styleCode.otpText}>
+     <View style={styleCode.otpBox}>
       <TextInput
-        keyboardType='numeric'
-        onChangeText={onChangePhone}
+        style={styleCode.otpText}
+        keyboardType='default'
         maxLength={1}
         ref={secondInput}
         onChangeText={text => {
-          text && secondInput.current.focus();
+          setOtp({...otp, 2: text})
+          text ? thirdInput.current.focus() : firstInput.current.focus()
         }}
       />
       </View>
-     <View style={styleCode.otpText}>
+     <View style={styleCode.otpBox}>
       <TextInput
-        keyboardType='numeric'
-        onChangeText={onChangePhone}
+        style={styleCode.otpText}
+        keyboardType='default'
         maxLength={1}
-        ref={thridInput}
+        ref={thirdInput}
         onChangeText={text => {
-          text && thirdInput.current.focus();
+          setOtp({...otp, 3: text})
+          text ? fourthInput.current.focus() : secondInput.current.focus()
         }}
       />
      </View>
-     <View style={styleCode.otpText}>
+     <View style={styleCode.otpBox}>
       <TextInput
-        keyboardType='numeric'
-        onChangeText={onChangePhone}
+        style={styleCode.otpText}
+        keyboardType='default'
         maxLength={1}
         ref={fourthInput}
         onChangeText={text => {
-          text && fourthInput.current.focus();
+          setOtp({...otp, 4: text})
+          text ? fourthInput.current.focus() : thirdInput.current.focus()
         }}
       />
       </View>
