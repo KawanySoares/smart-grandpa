@@ -8,6 +8,7 @@ import { OpScreen } from './src/screens/EntradaOp/op'
 import { SenhaSreen } from './src/screens/Senha/recuperaSenha';
 import { CodeScreen} from './src/screens/PagCodigo/codigo';
 import { NavigationContainer } from '@react-navigation/native';
+import api from './src/service/api';
 
 
 

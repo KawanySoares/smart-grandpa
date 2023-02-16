@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styleRegister from './styleRegister';
 import { View, Text, TextInput, TouchableOpacity,Image} from 'react-native'
 import { Ionicons} from '@expo/vector-icons';
@@ -7,6 +7,7 @@ import loginFacebook from 'C:/Users/kawah/Documents/GitHub/smart-grandpa/front/a
 import loginGoogle from 'C:/Users/kawah/Documents/GitHub/smart-grandpa/front/assets/google.png';
 import { NavigationContainer } from '@react-navigation/native';
 // import { styleRegister } from './styleRegister';
+import { api } from "../../service/api"
 
 export function RegisterScreen({ navigation }){
 
@@ -14,13 +15,22 @@ export function RegisterScreen({ navigation }){
   const [email, onChangeEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
   const [hidePass, setHidePass] = React.useState(true);
+  useEffect(() => {
+    api.get('')
+  })
   const [fonteLoaded] = useFonts({
     FiraSans_500Medium,
+
+
 
   });
   
   if(!fonteLoaded){
     return null;
+  }
+  
+  const handleLogin = () => {
+    
   }
     
   
