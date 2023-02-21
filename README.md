@@ -28,7 +28,10 @@ O projeto Smart Grandpa se trata de um sistema mobile desenvolvido para melhorar
   <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white"/>
   <img src="https://img.shields.io/badge/Insomnia-5849be?style=for-the-badge&logo=Insomnia&logoColor=white"/>
   <img src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white"/>
-  
-
-  
 </p>
+
+## Contribuidores
+
+
+| [<img src="https://avatars.githubusercontent.com/u/88352519?v=4" width=115><br><sub>Matheus Jardim</sub>](https://github.com/Berkinhas) |  [<img src="https://avatars.githubusercontent.com/u/123080479?v=4" width=115><br><sub>Kawany Soares</sub>](https://github.com/KawanySoares) |  [<img src="https://avatars.githubusercontent.com/u/72463957?v=4" width=115><br><sub>Rhuan Rodrigues</sub>](https://github.com/Rhuan-Rodrigues1) |
+| :---: | :---: | :---: |
